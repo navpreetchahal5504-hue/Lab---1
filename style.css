@@ -1,0 +1,202 @@
+/* ============================================================
+    STUDENT TASKS COMPELETED::
+    1. CSS variables palette added
+    2. Hero background + parallax effect added
+    3. All colors applied using var()
+    4. WCAG AA contrast considered
+============================================================== */
+
+/* ==========================
+     CSS VARIABLES (PALETTE) 
+=========================== */
+:root {
+    --base: #0b1320;
+    --text:#e6e6e6;
+    --secondary: #1c2541;
+    --primary: #4cc9f0;
+    --accent: #f72585;
+}
+
+/* ==========================
+     RESET 
+=========================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================
+    GLOBAL STYLES 
+=========================== */
+body {
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica , Arial;
+    line-height: 1.5;
+    background-color: var(--base);
+    color: var(--text);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline-offset: 3px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================
+    SKIP LINK (ACCESSIBILITY)
+=========================== */
+.skip-link {
+    position: absolute;
+    left: 999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: .5rem;
+    background: #000;
+    color: #fff;
+}
+
+/* ==========================
+    HEADER + NAV 
+=========================== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .75 rem 1rem;
+    background-color:  var(--secondary);
+}
+
+.nav a {
+    padding: .5rem .75rem;
+    border-radius: .5rem;
+    color: var(--text);
+    transition: 0.3 ease;
+}
+
+.nav a:hover {
+    background-color: var(--primary);
+    color: var(--base);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+    min-height: 60vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 6rem 1rem 4rem;
+
+    background-image:
+             linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("https://images.tech.jpg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: var(--text);
+}
+
+.hero h1 {
+    font-size: clamp(2.25rem, 4vw + 1rem, 4.25rem);
+    margin: 0 0 .5rem;
+}
+
+.hero p {
+    max-width: 62ch;
+    margin: 0 auto 1.25rem;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn {
+    display: inline-block;
+    padding: .85rem 1.15rem;
+    border-radius: .75rem;
+    font-weight: 600;
+    background-color: var(--accent);
+    color: white;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background-color: var(--primary);
+    color: var(--base);
+}
+
+/* =========================
+   SPEAKER GRID
+========================= */
+.speakers {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 1rem;
+    display: grid;
+    gap: 1rem; 
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+    padding: auto;
+    border-radius: 1rem;
+    background-color: var(--secondary);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3 ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: var(--secondary);
+    color: var(--text);
+}
