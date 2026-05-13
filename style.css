@@ -121,7 +121,7 @@ header {
 
     background-image:
              linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url("https://images.tech.jpg.png");
+        url("https:tech.jpg.png");
 
     background-size: cover;
     background-position: center;
